@@ -6,6 +6,7 @@ import { FormsModule } from '@angular/forms';
   standalone: true,
   selector: 'app-burger-form',
   templateUrl: 'burger-form.component.html',
+  styleUrls: ['burger-form.component.css'],
   imports: [FormsModule],
 })
 export class BurgerFormComponent {

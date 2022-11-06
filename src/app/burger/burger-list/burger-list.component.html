@@ -1,0 +1,10 @@
+<div class="grid w-full grid-cols-1 gap-3">
+  <div *ngFor="let burger of currentPageBurgers" class="w-full">
+    <app-burger-item [burger]="burger"></app-burger-item>
+  </div>
+</div>
+<app-paginator
+  *ngIf="burgers && burgers.length > 0"
+  [pageCounts]="pageCounts"
+  (pageChangeEvent)="pageChange($event)"
+></app-paginator>

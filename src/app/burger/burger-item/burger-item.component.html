@@ -1,0 +1,22 @@
+<div class="shadow-md p-5 rounded-xl border flex flex-col w-full h-56">
+  <div>
+    <div class="flex items-center gap-3">
+      <span class="text-xs text-gray-300">이름:</span>
+      <span>
+        {{ burger?.name }}
+      </span>
+    </div>
+    <div class="flex items-center gap-3">
+      <span class="text-xs text-gray-300">브랜드:</span>
+      <span>
+        {{ burger?.brand }}
+      </span>
+    </div>
+    <div class="flex-1 flex flex-col justify-center gap-3">
+      <span class="text-xs text-gray-300">설명:</span>
+      <p class="break-words h-20 overflow-y-auto">
+        {{ burger?.description }}
+      </p>
+    </div>
+  </div>
+</div>

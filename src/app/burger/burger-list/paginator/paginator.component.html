@@ -1,0 +1,23 @@
+<ul class="flex gap-5 justify-center p-10">
+  <ng-template [ngIf]="activePageNum > 4">
+    <li>
+      <button (click)="pageChangeHandler(1)">1</button>
+    </li>
+    <li>...</li>
+  </ng-template>
+  <li *ngFor="let page of showingCountsArray">
+    <button (click)="pageChangeHandler(page)">
+      <span [class]="activePageNum === page - 1 ? 'font-extrabold' : null">
+        {{ page }}
+      </span>
+    </button>
+  </li>
+  <ng-template [ngIf]="activePageNum <= pageCounts - 3">
+    <li>
+      <span>...</span>
+    </li>
+    <li>
+      <button (click)="pageChangeHandler(pageCounts)">{{ pageCounts }}</button>
+    </li>
+  </ng-template>
+</ul>
