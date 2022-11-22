@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { BurgerFormComponent } from './burger/common/burger-form/burger-form.component';
 import { BurgerHomeComponent } from './burger/pages/burger-home/burger-home.component';
+import { BurgerEditComponent } from './burger/pages/burger-edit/burger-edit.component';
 
 const routes: Routes = [
   {
-    path: 'burger-home/edit/:burgerId',
-    component: BurgerFormComponent,
+    path: 'burger/edit/:burgerId',
+    component: BurgerEditComponent,
   },
   { path: 'burger', component: BurgerHomeComponent, pathMatch: 'full' },
 ];
