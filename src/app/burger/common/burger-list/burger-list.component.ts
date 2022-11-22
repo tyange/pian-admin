@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForOf, NgIf } from '@angular/common';
-import { BurgerService } from '../burger.service';
+import { BurgerService } from '../../burger.service';
 import { Subscription } from 'rxjs';
-import { Burger } from '../burger.model';
+import { Burger } from '../../burger.model';
 import { BurgerItemComponent } from '../burger-item/burger-item.component';
 import { PaginatorComponent } from './paginator/paginator.component';
 

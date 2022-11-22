@@ -51,4 +51,6 @@ export class BurgerService {
     const url = `${this.baseUrl}/burger`;
     this.http.post(url, burger).subscribe(() => this.getAllBurger());
   }
+
+  editBurger() {}
 }

@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Burger } from '../burger.model';
+import { Burger } from '../../burger.model';
 
 @Component({
   standalone: true,

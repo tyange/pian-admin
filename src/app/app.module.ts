@@ -4,9 +4,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LayoutComponent } from './layout/layout.component';
-import { BurgerComponent } from './burger/burger.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HttpClientModule } from '@angular/common/http';
+import { BurgerHomeComponent } from './burger/pages/burger-home/burger-home.component';
 
 @NgModule({
   declarations: [AppComponent],
@@ -16,7 +16,7 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule,
     FontAwesomeModule,
     LayoutComponent,
-    BurgerComponent,
+    BurgerHomeComponent,
   ],
   providers: [],
   bootstrap: [AppComponent],

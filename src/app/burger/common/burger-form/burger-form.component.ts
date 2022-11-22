@@ -1,12 +1,11 @@
 import { Component } from '@angular/core';
-import { BurgerService } from '../burger.service';
+import { BurgerService } from '../../burger.service';
 import { FormsModule } from '@angular/forms';
 
 @Component({
   standalone: true,
   selector: 'app-burger-form',
   templateUrl: 'burger-form.component.html',
-  styleUrls: ['burger-form.component.css'],
   imports: [FormsModule],
 })
 export class BurgerFormComponent {
