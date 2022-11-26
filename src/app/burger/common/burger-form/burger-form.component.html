@@ -22,13 +22,13 @@
     ></textarea>
     <div class="flex justify-end gap-3">
       <ng-template [ngIf]="!isEditMode">
-        <button class="btn btn-accent">초기화</button>
-        <button class="btn btn-primary" (click)="addBurgerHandler()">
+        <button class="btn btn-primary">초기화</button>
+        <button class="btn btn-accent" (click)="addBurgerHandler()">
           저장하기
         </button>
       </ng-template>
       <ng-template [ngIf]="isEditMode">
-        <button class="btn btn-primary" (click)="editBurger(burgerData!.id)">
+        <button class="btn btn-accent" (click)="editBurger(burgerData!.id)">
           저장하기
         </button>
       </ng-template>
