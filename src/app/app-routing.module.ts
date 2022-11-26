@@ -5,7 +5,7 @@ import { BurgerEditComponent } from './burger/pages/burger-edit/burger-edit.comp
 
 const routes: Routes = [
   {
-    path: 'burger/edit/:burgerId',
+    path: 'burger/edit/:id',
     component: BurgerEditComponent,
   },
   { path: 'burger', component: BurgerHomeComponent, pathMatch: 'full' },

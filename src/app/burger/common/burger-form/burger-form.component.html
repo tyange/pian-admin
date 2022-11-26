@@ -21,10 +21,17 @@
       [(ngModel)]="enteredDescription"
     ></textarea>
     <div class="flex justify-end gap-3">
-      <button class="btn btn-accent">초기화</button>
-      <button class="btn btn-primary" (click)="addBurgerHandler()">
-        저장하기
-      </button>
+      <ng-template [ngIf]="!isEditMode">
+        <button class="btn btn-accent">초기화</button>
+        <button class="btn btn-primary" (click)="addBurgerHandler()">
+          저장하기
+        </button>
+      </ng-template>
+      <ng-template [ngIf]="isEditMode">
+        <button class="btn btn-primary" (click)="editBurger(burgerData!.id)">
+          저장하기
+        </button>
+      </ng-template>
     </div>
   </div>
 </form>

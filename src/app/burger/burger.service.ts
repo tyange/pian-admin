@@ -47,10 +47,23 @@ export class BurgerService {
     return this.burgerSub;
   }
 
+  getBurger(id: number) {
+    const url = `${this.baseUrl}/burger/${id}`;
+
+    return this.http.get<Burger>(url);
+  }
+
   addBurger(burger: { name: string; brand: string; description: string }) {
     const url = `${this.baseUrl}/burger`;
     this.http.post(url, burger).subscribe(() => this.getAllBurger());
   }
 
-  editBurger() {}
+  editBurger(burger: Burger) {
+    const url = `${this.baseUrl}/burger/${burger.id}`;
+    return this.http.put(url, {
+      name: burger.name,
+      brand: burger.brand,
+      description: burger.description,
+    });
+  }
 }
