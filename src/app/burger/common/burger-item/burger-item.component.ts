@@ -13,6 +13,8 @@ export class BurgerItemComponent {
   constructor(private router: Router) {}
 
   editButtonClickHandler() {
+    console.log(this.burger?.id);
+
     this.router.navigate([`/burger/edit/${this.burger?.id}`]);
   }
 }

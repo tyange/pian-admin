@@ -7,6 +7,7 @@ import { LayoutComponent } from './layout/layout.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HttpClientModule } from '@angular/common/http';
 import { BurgerHomeComponent } from './burger/pages/burger-home/burger-home.component';
+import { ModalComponent } from './layout/modal/modal.component';
 
 @NgModule({
   declarations: [AppComponent],
@@ -17,6 +18,7 @@ import { BurgerHomeComponent } from './burger/pages/burger-home/burger-home.comp
     FontAwesomeModule,
     LayoutComponent,
     BurgerHomeComponent,
+    ModalComponent,
   ],
   providers: [],
   bootstrap: [AppComponent],

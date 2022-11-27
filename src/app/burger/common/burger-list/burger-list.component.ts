@@ -5,13 +5,20 @@ import { Subscription } from 'rxjs';
 import { Burger } from '../../burger.model';
 import { BurgerItemComponent } from '../burger-item/burger-item.component';
 import { PaginatorComponent } from './paginator/paginator.component';
+import { ModalComponent } from '../../../layout/modal/modal.component';
 
 @Component({
   standalone: true,
   selector: 'app-burger-list',
   templateUrl: 'burger-list.component.html',
   styleUrls: ['burger-list.component.css'],
-  imports: [BurgerItemComponent, NgForOf, PaginatorComponent, NgIf],
+  imports: [
+    BurgerItemComponent,
+    NgForOf,
+    PaginatorComponent,
+    NgIf,
+    ModalComponent,
+  ],
 })
 export class BurgerListComponent implements OnInit {
   burgers: Burger[][] = [];

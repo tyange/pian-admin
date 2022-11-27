@@ -66,4 +66,9 @@ export class BurgerService {
       description: burger.description,
     });
   }
+
+  deleteBurger(burgerId: number | undefined) {
+    const url = `${this.baseUrl}/burger/${burgerId}`;
+    return this.http.delete(url);
+  }
 }
