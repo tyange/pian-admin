@@ -1,10 +1,4 @@
-import {
-  Component,
-  EventEmitter,
-  Input,
-  OnChanges,
-  Output,
-} from '@angular/core';
+import { Component, Input, OnChanges } from '@angular/core';
 import { BurgerService } from '../../burger.service';
 import { FormsModule } from '@angular/forms';
 import { Burger } from '../../burger.model';
@@ -44,7 +38,7 @@ export class BurgerFormComponent implements OnChanges {
     });
   }
 
-  editBurger() {
+  editBurgerHandler() {
     this.burgerService
       .editBurger({
         id: this.burgerData!.id,
@@ -52,6 +46,12 @@ export class BurgerFormComponent implements OnChanges {
         brand: this.enteredBrand,
         description: this.enteredDescription,
       })
+      .subscribe({ next: () => this.router.navigate(['/burger']) });
+  }
+
+  deleteBurgerHandler() {
+    this.burgerService
+      .deleteBurger(this.burgerData?.id)
       .subscribe({ next: () => this.router.navigate(['/burger']) });
   }
 }

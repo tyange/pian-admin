@@ -30,11 +30,13 @@
       <ng-template [ngIf]="isEditMode">
         <div class="flex flex-col w-11/12 gap-3">
           <div class="flex justify-between">
-            <button class="btn btn-error">버거 삭제</button>
+            <button class="btn btn-error" (click)="deleteBurgerHandler()">
+              버거 삭제
+            </button>
             <button class="btn btn-primary">돌아가기</button>
           </div>
           <div class="w-full">
-            <button class="btn btn-accent w-full" (click)="editBurger()">
+            <button class="btn btn-accent w-full" (click)="editBurgerHandler()">
               수정하기
             </button>
           </div>
