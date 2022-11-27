@@ -9,6 +9,7 @@ const routes: Routes = [
     component: BurgerEditComponent,
   },
   { path: 'burger', component: BurgerHomeComponent, pathMatch: 'full' },
+  { path: '', redirectTo: 'burger', pathMatch: 'full' },
 ];
 
 @NgModule({
