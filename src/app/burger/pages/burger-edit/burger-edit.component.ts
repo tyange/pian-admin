@@ -27,10 +27,4 @@ export class BurgerEditComponent implements OnInit {
         this.burgerData = data;
       });
   }
-
-  editBurgerHandler(burger: Burger) {
-    this.burgerService
-      .editBurger(burger)
-      .subscribe(() => this.router.navigate(['burger']));
-  }
 }

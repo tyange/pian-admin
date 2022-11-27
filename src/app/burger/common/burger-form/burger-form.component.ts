@@ -9,6 +9,7 @@ import { BurgerService } from '../../burger.service';
 import { FormsModule } from '@angular/forms';
 import { Burger } from '../../burger.model';
 import { NgIf } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   standalone: true,
@@ -18,19 +19,13 @@ import { NgIf } from '@angular/common';
 })
 export class BurgerFormComponent implements OnChanges {
   @Input() burgerData?: Burger;
-  @Output() editBurgerEvent = new EventEmitter<{
-    id: number;
-    name: string;
-    brand: string;
-    description: string;
-  }>();
 
   isEditMode = false;
   enteredName = '';
   enteredBrand = '';
   enteredDescription = '';
 
-  constructor(private burgerService: BurgerService) {}
+  constructor(private router: Router, private burgerService: BurgerService) {}
 
   ngOnChanges() {
     if (this.burgerData) {
@@ -49,12 +44,14 @@ export class BurgerFormComponent implements OnChanges {
     });
   }
 
-  editBurger(burgerId: number) {
-    this.editBurgerEvent.emit({
-      id: burgerId,
-      name: this.enteredName,
-      brand: this.enteredBrand,
-      description: this.enteredDescription,
-    });
+  editBurger() {
+    this.burgerService
+      .editBurger({
+        id: this.burgerData!.id,
+        name: this.enteredName,
+        brand: this.enteredBrand,
+        description: this.enteredDescription,
+      })
+      .subscribe({ next: () => this.router.navigate(['/burger']) });
   }
 }
